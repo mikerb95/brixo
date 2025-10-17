@@ -14,6 +14,17 @@ export default {
           light: '#7dd3fc',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          lg: '1120px',
+          xl: '1200px',
+        },
+      },
     },
   },
   plugins: [],

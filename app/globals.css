@@ -9,3 +9,7 @@
 .container {
   max-width: 1200px;
 }
+
+/* Smooth scroll and nicer focus */
+html { scroll-behavior: smooth; }
+:focus-visible { outline: 2px solid theme('colors.brand.DEFAULT'); outline-offset: 2px; }

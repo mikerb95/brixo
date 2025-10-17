@@ -10,8 +10,8 @@ export default function HomePage() {
             <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Encuentra profesionales para tus proyectos</h1>
             <p className="mb-6 text-lg text-gray-700">Obra, carpintería, plomería y más. Publica tu necesidad o contrata a un profesional verificado.</p>
             <div className="flex gap-3">
-              <Link href="/contratar" className="rounded bg-brand px-4 py-2 font-medium text-white hover:bg-brand-dark">Contratar</Link>
-              <Link href="/profesionales" className="rounded border border-brand px-4 py-2 font-medium text-brand hover:bg-brand/10">Ser profesional</Link>
+              <Link href="/taskers" className="rounded bg-brand px-4 py-2 font-medium text-white hover:bg-brand-dark">Explorar Taskers</Link>
+              <Link href="/profesionales" className="rounded border border-brand px-4 py-2 font-medium text-brand hover:bg-brand/10">Ser Tasker</Link>
             </div>
           </div>
           <div className="rounded-lg border bg-white p-6 shadow-sm">
@@ -19,7 +19,7 @@ export default function HomePage() {
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {categories.map((c) => (
                 <li key={c.slug} className="">
-                  <Link className="block rounded border px-3 py-2 hover:border-brand hover:text-brand" href={`/servicios?cat=${c.slug}`}>
+                  <Link className="block rounded border px-3 py-2 hover:border-brand hover:text-brand" href={`/taskers?cat=${c.slug}`}>
                     {c.name}
                   </Link>
                 </li>
@@ -34,7 +34,7 @@ export default function HomePage() {
           <div key={c.slug} className="rounded-lg border p-6 shadow-sm">
             <h3 className="mb-2 text-lg font-semibold">{c.name}</h3>
             <p className="mb-4 text-sm text-gray-600">{c.description}</p>
-            <Link href={`/servicios?cat=${c.slug}`} className="text-brand hover:underline">Ver servicios</Link>
+            <Link href={`/taskers?cat=${c.slug}`} className="text-brand hover:underline">Ver profesionales</Link>
           </div>
         ))}
       </section>

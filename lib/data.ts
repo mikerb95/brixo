@@ -17,6 +17,37 @@ export type Service = {
   }
 }
 
+// TaskRabbit-like entities
+export type Tasker = {
+  id: string
+  name: string
+  bio: string
+  skills: string[] // category slugs
+  hourlyRate: number // COP per hour
+  rating: number // 0-5
+  city?: string
+}
+
+export type Reservation = {
+  id: string
+  taskerId: string
+  date: string // ISO date YYYY-MM-DD
+  startTime: string // HH:mm
+  hours: number
+  address: string
+  total: number
+  status: 'created' | 'paid' | 'canceled'
+}
+
+export type ClientTask = {
+  id: string
+  category: string
+  description: string
+  estimatedHours: number
+  address: string
+  createdAt: string
+}
+
 export const categories: Category[] = [
   { slug: 'obra', name: 'Obra', description: 'Construcción, acabados y remodelaciones.' },
   { slug: 'carpinteria', name: 'Carpintería', description: 'Muebles, puertas, armarios y más.' },
@@ -50,5 +81,35 @@ export const services: Service[] = [
     price: 200000,
     category: 'pintura',
     pro: { id: 'pro-003', name: 'María Gómez', rating: 4.9 },
+  },
+]
+
+export const taskers: Tasker[] = [
+  {
+    id: 'tsk-001',
+    name: 'Juan Pérez',
+    bio: 'Especialista en plomería residencial y comercial con 10 años de experiencia.',
+    skills: ['plomeria'],
+    hourlyRate: 60000,
+    rating: 4.8,
+    city: 'Bogotá',
+  },
+  {
+    id: 'tsk-002',
+    name: 'Carpintería Los Robles',
+    bio: 'Fabricación e instalación de muebles a medida y restauración de madera.',
+    skills: ['carpinteria'],
+    hourlyRate: 75000,
+    rating: 4.6,
+    city: 'Medellín',
+  },
+  {
+    id: 'tsk-003',
+    name: 'María Gómez',
+    bio: 'Pintura interior/exterior con acabados finos y asesoría de color.',
+    skills: ['pintura', 'obra'],
+    hourlyRate: 65000,
+    rating: 4.9,
+    city: 'Cali',
   },
 ]

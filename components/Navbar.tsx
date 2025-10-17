@@ -8,9 +8,9 @@ export function Navbar() {
           Brixo
         </Link>
         <nav className="flex items-center gap-4 text-sm">
-          <Link href="/servicios" className="hover:text-brand-dark">Servicios</Link>
-          <Link href="/profesionales" className="hover:text-brand-dark">Profesionales</Link>
-          <Link href="/contratar" className="rounded bg-brand px-3 py-1.5 font-medium text-white hover:bg-brand-dark">Contratar</Link>
+          <Link href="/taskers" className="hover:text-brand-dark">Explorar</Link>
+          <Link href="/profesionales" className="hover:text-brand-dark">Ser Tasker</Link>
+          <Link href="/contratar" className="rounded bg-brand px-3 py-1.5 font-medium text-white hover:bg-brand-dark">Publicar tarea</Link>
         </nav>
       </div>
     </header>

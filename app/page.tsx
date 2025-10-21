@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { categories, taskers } from '@/lib/data'
 import hero2 from '../src/images/hero2.jpg'
+import toolsBig from '../src/images/toolsbig.jpg'
 
 export default function HomePage() {
   return (
@@ -104,6 +105,31 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Herramientas en alquiler */}
+      <section>
+        <div className="relative overflow-hidden rounded-2xl">
+          <Image
+            src={toolsBig}
+            alt="Herramientas profesionales para alquilar"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            placeholder="blur"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 p-8 sm:p-12">
+            <div className="max-w-xl text-white">
+              <h2 className="text-2xl font-bold sm:text-3xl">¿Necesitas herramientas puntuales?</h2>
+              <p className="mt-2 text-white/90">Alquila taladros, sierras, andamios y más por día u horas, sin comprar. Ideal para proyectos rápidos y profesionales en movimiento.</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/taskers?cat=herramientas" className="rounded bg-brand px-5 py-2.5 font-medium text-white hover:bg-brand-dark">Ver disponibilidad</Link>
+                <Link href="/contratar" className="rounded border border-white/30 px-5 py-2.5 font-medium text-white hover:bg-white/10">Publicar necesidad</Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Testimonios */}

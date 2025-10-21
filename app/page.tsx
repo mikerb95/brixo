@@ -1,32 +1,50 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { categories, taskers } from '@/lib/data'
+import hero2 from '../src/images/hero2.jpg'
 
 export default function HomePage() {
   return (
     <div className="space-y-16">
       {/* Hero */}
-      <section className="overflow-hidden rounded-2xl bg-gradient-to-r from-brand/15 via-white to-brand-light/20 p-8 sm:p-12">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <h1 className="mb-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Profesionales confiables, cuando los necesitas</h1>
-            <p className="mb-6 text-lg text-gray-700">Reserva por horas a expertos en obra, carpintería, plomería y más. Publica tu necesidad o reserva de inmediato.</p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/taskers" className="rounded bg-brand px-5 py-2.5 font-medium text-white shadow-md hover:bg-brand-dark">Explorar Taskers</Link>
-              <Link href="/contratar" className="rounded border border-brand px-5 py-2.5 font-medium text-brand hover:bg-brand/10">Publicar tarea</Link>
-              <Link href="/profesionales" className="rounded px-5 py-2.5 font-medium hover:bg-gray-100">Ser Tasker</Link>
+      <section className="relative isolate min-h-[70vh] md:min-h-[80vh] overflow-hidden rounded-2xl">
+        {/* Fondo: imagen hero2 + overlay */}
+        <Image
+          src={hero2}
+          alt="Profesionales de construcción, carpintería y plomería"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          placeholder="blur"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+
+        {/* Contenido superpuesto */}
+        <div className="relative z-10 p-8 sm:p-12">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div className="max-w-2xl text-white">
+              <h1 className="mb-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Profesionales confiables, cuando los necesitas</h1>
+              <p className="mb-6 text-lg text-white/90">Reserva por horas a expertos en obra, carpintería, plomería y más. Publica tu necesidad o reserva de inmediato.</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/taskers" className="rounded bg-brand px-5 py-2.5 font-medium text-white shadow-md hover:bg-brand-dark">Explorar Taskers</Link>
+                <Link href="/contratar" className="rounded border border-white/30 px-5 py-2.5 font-medium text-white hover:bg-white/10">Publicar tarea</Link>
+                <Link href="/profesionales" className="rounded px-5 py-2.5 font-medium text-white hover:bg-white/10">Ser Tasker</Link>
+              </div>
             </div>
-          </div>
-          <div className="rounded-xl border bg-white p-6 shadow-sm">
-            <h2 className="mb-4 font-semibold">Categorías populares</h2>
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {categories.map((c) => (
-                <li key={c.slug}>
-                  <Link className="block rounded border px-3 py-2 hover:border-brand hover:text-brand" href={`/taskers?cat=${c.slug}`}>
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+
+            <div className="rounded-xl border border-white/20 bg-white/10 p-6 text-white shadow-sm backdrop-blur">
+              <h2 className="mb-4 font-semibold">Categorías populares</h2>
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {categories.map((c) => (
+                  <li key={c.slug}>
+                    <Link className="block rounded border border-white/30 px-3 py-2 hover:border-white hover:bg-white/10" href={`/taskers?cat=${c.slug}`}>
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

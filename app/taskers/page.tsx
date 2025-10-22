@@ -56,6 +56,21 @@ export default function TaskersPage({ searchParams }: { searchParams: { cat?: st
           </li>
         ))}
       </ul>
+
+      <section className="rounded-2xl border bg-white p-6 text-center shadow-sm">
+        <h2 className="text-xl font-semibold text-gray-900">¿No encontraste la solución que buscabas?</h2>
+        <p className="mt-2 text-sm text-gray-600">
+          Cuéntanos los detalles de tu requerimiento y nosotros nos encargaremos de conectarte con el tasker adecuado.
+        </p>
+        <div className="mt-4">
+          <Link
+            href="/contratar"
+            className="inline-flex items-center rounded bg-brand px-5 py-2.5 font-medium text-white shadow hover:bg-brand-dark"
+          >
+            Publicar tarea
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

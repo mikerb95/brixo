@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="border-t bg-white text-sm text-gray-700">
+    <footer className="border-t bg-white/95 text-sm text-gray-700 backdrop-blur supports-[backdrop-filter]:bg-white/85">
       <div className="container mx-auto grid gap-10 px-4 py-12 sm:grid-cols-2 md:grid-cols-4 sm:px-6 lg:px-8">
         <div>
           <h4 className="mb-3 text-base font-semibold text-gray-900">Categorías</h4>

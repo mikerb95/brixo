@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="mx-auto flex w-full max-w-[100rem] items-center justify-between px-4 py-4 sm:px-6 lg:px-10">
+      <div className="container flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-xl font-extrabold tracking-tight text-brand hover:opacity-90">
           Brixo
         </Link>

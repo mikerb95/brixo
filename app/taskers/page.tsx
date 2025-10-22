@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { taskers, categories } from '@/lib/data'
+import workers from '../../src/images/workers.jpg'
 
 export default function TaskersPage({ searchParams }: { searchParams: { cat?: string } }) {
   const active = searchParams?.cat
@@ -10,6 +12,26 @@ export default function TaskersPage({ searchParams }: { searchParams: { cat?: st
       <div>
         <h1 className="mb-2 text-2xl font-bold">Explora profesionales</h1>
         <p className="text-gray-600">Filtra por categoría para encontrar el profesional ideal.</p>
+      </div>
+
+      <div className="relative hidden overflow-hidden rounded-2xl border border-white/20 bg-gray-900 lg:block">
+        <div className="relative h-60">
+          <Image
+            src={workers}
+            alt="Equipo de profesionales trabajando"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            placeholder="blur"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+          <div className="relative z-10 flex h-full items-center px-10 py-8">
+            <div className="max-w-xl text-white">
+              <h2 className="text-2xl font-semibold">Necesitas un equipo completo para tu obra</h2>
+              <p className="mt-2 text-white/90">Conecta con cuadrillas especializadas y alquila herramientas de gran formato en una sola gestión.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-2">
